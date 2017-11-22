@@ -1,0 +1,25 @@
+{
+  "presets": ["es2015", "stage-0", "react", "flow"],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-decorators-legacy",
+    "transform-runtime",
+    "transform-object-assign",
+    "lodash"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-remove-console",
+        "transform-react-remove-prop-types",
+        ["module-alias", [
+          { "src": "./client", "expose": "@root" },
+          { "src": "./client/assets", "expose": "@assets" },
+          { "src": "./client/pages", "expose": "@pages" },
+          { "src": "./client/components", "expose": "@components" },
+          { "src": "./client/modules", "expose": "@modules" }
+        ]]
+      ]
+    }
+  }
+}
