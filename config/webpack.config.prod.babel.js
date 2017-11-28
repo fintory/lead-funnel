@@ -1,6 +1,7 @@
 
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import UglifyWebpackPlugin from 'uglifyjs-webpack-plugin';
 import baseConfig from './webpack.config.common.js';
 
 module.exports = {
@@ -27,6 +28,6 @@ module.exports = {
         minifyURLs: true,
       },
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new UglifyWebpackPlugin(),
   ],
 };
