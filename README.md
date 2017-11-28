@@ -1,9 +1,9 @@
-[![kickup-react](https://s3.eu-central-1.amazonaws.com/github-banner/kickup-react.jpg)](#)
+[![lead-funnel](https://s3.eu-central-1.amazonaws.com/github-banner/fintory-lead-funnel.jpg)](#)
 
 <p align="center">
-<a href="https://github.com/kreativgebiet/kickup-react/releases"><img src="https://img.shields.io/github/release/kreativgebiet/kickup-react.svg" /></a>
-<a href="https://david-dm.org/kreativgebiet/kickup-react" target="_blank"><img src="https://img.shields.io/david/kreativgebiet/kickup-react.svg" /></a>
-<a href="https://david-dm.org/kreativgebiet/kickup-react?type=dev" target="_blank"><img src="https://img.shields.io/david/dev/kreativgebiet/kickup-react.svg" /></a>
+<a href="https://github.com/fintory/lead-funnel/releases"><img src="https://img.shields.io/github/release/fintory/lead-funnel.svg" /></a>
+<a href="https://david-dm.org/fintory/lead-funnel" target="_blank"><img src="https://img.shields.io/david/fintory/lead-funnel.svg" /></a>
+<a href="https://david-dm.org/fintory/lead-funnel?type=dev" target="_blank"><img src="https://img.shields.io/david/dev/fintory/lead-funnel.svg" /></a>
 </p>
 
 ## Why another boilerplate?
