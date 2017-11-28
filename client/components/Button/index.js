@@ -5,22 +5,21 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { css } from 'aphrodite';
 import has from 'lodash/has';
-import invariant from 'invariant';
 
 import { spinConfig as defaultSpinConfig } from '@root/config.js';
 import Spin from '@components/Spin';
 import styles from './style.js';
 
-export default function Button(allProps: Object) {
+export default function Button(allProps) {
   let Tag = 'button';
   const { loading, spinConfig, ...props } = allProps;
 
-  if (has(props, 'to')) {
+  if (has(props, 'to') && props.to) {
     Tag = Link;
 
     delete props.href;
     delete props.onClick;
-  } else if (has(props, 'href')) {
+  } else if (has(props, 'href') && props.href) {
     Tag = 'a';
 
     delete props.to;
@@ -30,7 +29,11 @@ export default function Button(allProps: Object) {
   return (
     <Tag
       disabled={loading}
-      className={css(styles.main, loading && styles.main__loading)}
+      className={css(
+        styles.main,
+        loading && styles.main__loading,
+        props.disabled && styles['main--disabled']
+      )}
       {...props}
     >
       {/* Implement the spinner for loading activity */}
@@ -51,15 +54,15 @@ Button.defaultProps = {
   loading: false,
   to: null,
   href: null,
-  onClick: () =>
-    invariant(false, 'No `onClick`, `to` or `href` was defined. Used fallback, with a noop.'),
+  // onClick: () =>
+  //   console.warn('No `onClick`, `to` or `href` was defined. Used fallback, with a noop.'),
 };
 
 Button.propTypes = {
   to: PropTypes.string,
   loading: PropTypes.bool,
   href: PropTypes.string,
-  onClick: PropTypes.func,
+  // onClick: PropTypes.func,
   spinConfig: PropTypes.object,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),

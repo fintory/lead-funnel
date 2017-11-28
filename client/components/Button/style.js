@@ -2,34 +2,29 @@ import { StyleSheet } from 'aphrodite';
 
 export default StyleSheet.create({
   main: {
-    backgroundColor: '#808080',
+    backgroundImage: 'linear-gradient(45deg, #5395F6 0%, #63C8E4 100%)',
     color: 'white',
     textDecoration: 'none',
-    border: '1px solid #707070',
-    fontSize: '1rem',
+    fontSize: '13px',
     lineHeight: '1rem',
-    padding: '.75rem 1.5rem',
+    padding: '.8rem 1.5rem .7rem',
     borderRadius: '3px',
     transitionDuration: '250ms',
-    transitionProperty: 'background-color',
     overflow: 'hidden',
     position: 'relative',
     display: 'inline-block',
+    cursor: 'pointer',
+    '-webkit-appearance': 'none',
+    transition: ['opacity 200ms linear', 'filter 200ms linear'],
+    textTransform: 'uppercase',
     boxShadow: '0 2px 4px rgba(0, 0, 0, .1)',
-
-    '@media (max-width: 600px)': {
-      backgroundColor: 'red',
-    },
-
-    ':not([disabled]):hover': {
-      backgroundColor: '#707070',
-    },
-
-    '[disabled]': {
-      opacity: 0.7,
-      cursor: 'not-allowed',
-    },
   },
+  'main--disabled': {
+    opacity: 0.7,
+    cursor: 'not-allowed',
+    filter: 'grayscale(100%)',
+  },
+
   main__spinner: {
     display: 'inline-block',
     width: '100%',

@@ -43,6 +43,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
+      {
         test: /\.(png|jpg|gif)$/,
         use: ['url-loader?limit=10000&minetype=image/png', 'img-loader'],
       },
@@ -55,6 +59,7 @@ module.exports = {
       '@pages': path.resolve(paths.appBuild, 'pages'),
       '@components': path.resolve(paths.appBuild, 'components'),
       '@modules': path.resolve(paths.appBuild, 'modules'),
+      '@utils': path.resolve(paths.appBuild, 'utils'),
     },
     modules: [
       path.resolve('./'),

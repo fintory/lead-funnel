@@ -10,11 +10,15 @@ module.exports = {
     historyApiFallback: true,
     host: '0.0.0.0',
     contentBase: './client',
+    // disableHostCheck: true,
     hot: true,
     port: 3000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
+    // new webpack.NamedModulesPlugin(),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
     new webpack.DefinePlugin({
       'process.env': {
