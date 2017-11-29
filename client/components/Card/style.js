@@ -6,7 +6,7 @@ export default StyleSheet.create({
   card: {
     boxShadow: '0 22px 50px rgba(0, 0, 0, .05)',
     backgroundColor: 'white',
-    padding: '2rem 1.5rem 1.5rem',
+    padding: '1.5rem',
     borderRadius: 4,
 
     ...mobile({

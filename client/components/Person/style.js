@@ -5,8 +5,6 @@ import { mobile, retina, retina3x } from '@utils/queries';
 
 export default StyleSheet.create({
   person: {
-    paddingBottom: '2rem',
-
     ...mobile({
       position: 'fixed',
       bottom: 150,
