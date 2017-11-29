@@ -9,9 +9,12 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
-    new webpack.DefinePlugin(JSON.stringify({
-      'process.env': JSON.stringify({ NODE_ENV: 'production' }),
-    })),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+      },
+      __DEVTOOLS__: true,
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'index.html',
