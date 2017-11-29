@@ -14,12 +14,13 @@ export default {
 
     return err;
   },
-  '/information': (f) => {
+  '/ihre-informationen': (f) => {
     const err = {};
 
     if (!has(f, 'firstName') || !f.firstName) { err.firstName = FIELD_MISSING; }
     if (!has(f, 'lastName') || !f.lastName) { err.lastName = FIELD_MISSING; }
     if (!has(f, 'description') || !f.description) { err.description = FIELD_MISSING; }
+    if (!has(f, 'company') || !f.company) { err.company = FIELD_MISSING; }
 
     if (!has(f, 'email') || !f.email) {
       err.email = FIELD_MISSING;
@@ -29,8 +30,8 @@ export default {
 
     if (!has(f, 'phone') || !f.phone) {
       err.phone = FIELD_MISSING;
-    } else if (!isPhone(f.phone)) {
-      err.phone = 'Bitte einen Ländercode angeben';
+    // } else if (!isPhone(f.phone)) {
+    //   err.phone = 'Bitte einen Ländercode angeben';
     }
 
     return err;

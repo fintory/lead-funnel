@@ -8,11 +8,11 @@ import { Row, Col } from 'react-flexbox-grid';
 import { registerField, unregisterField, change } from 'redux-form';
 
 import Choice from '@components/Choice';
+import tabs from '@utils/tabs';
 
-import tabs from './tabs';
 import styles from './style';
 
-let Tabs = class extends Component {
+let Tabs = class extends Component { // eslint-disable-line
   constructor(props) {
     super(props);
 
@@ -81,7 +81,7 @@ let Tabs = class extends Component {
                 >
                   <Row>
                     {tab.choices.map((choice, index) => (
-                      <Col key={index.toString()} xs={12} sm={6} md={3}>
+                      <Col key={index.toString()} xs={12} sm={6} md={4} xl={3}>
                         <Choice
                           index={index}
                           onChange={() => this.onChange(choice.title, tab.key)}

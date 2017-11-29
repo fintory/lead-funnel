@@ -19,4 +19,8 @@ export default StyleSheet.create({
       backgroundImage: `url(${require('@assets/logo@3x.png')})`,
     }),
   },
+
+  'logo--right': {
+    float: 'right',
+  },
 });

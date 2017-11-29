@@ -5,6 +5,8 @@ import { css } from 'aphrodite/no-important';
 import Transition from 'react-transition-group/Transition';
 import styles from './style';
 
+import Card from '@components/Card';
+
 const requireIcons = require.context('@assets/services', true, /^\.\/.*\.svg/);
 
 export default class Choice extends Component {
@@ -16,14 +18,9 @@ export default class Choice extends Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick({ nativeEvent, currentTarget }) {
+  onClick() {
     if (document.documentElement.clientWidth > 500) {
-      const { top, left } = currentTarget.getBoundingClientRect();
-
-      const x = nativeEvent.pageX - left;
-      const y = nativeEvent.pageY - top;
-
-      this.setState(state => ({ ...state, x, y }));
+      this.setState(state => ({ ...state }));
     }
 
     this.props.onChange();
@@ -33,15 +30,17 @@ export default class Choice extends Component {
     const { isSelected: selected, tabState, state = '' } = this.props;
 
     return (
-      <section
+      <Card
+        small
+        interactive
         tabIndex={-1}
         role="button"
-        className={css(
+        additionalClassNames={[
           styles.choice,
           selected && styles['choice--selected'],
           (state === 'entering' || tabState === 'entering') && styles['choice--entering'],
           (state === 'exiting' || tabState === 'exiting') && styles['choice--exiting'],
-        )}
+        ]}
         style={{
           animationDelay: `${this.props.index * 50}ms`,
         }}
@@ -87,7 +86,7 @@ export default class Choice extends Component {
             dangerouslySetInnerHTML={{ __html: this.props.subtitle }}
           />
         </div>
-      </section>
+      </Card>
     );
   }
 }

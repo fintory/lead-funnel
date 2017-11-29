@@ -4,31 +4,36 @@ import Helmet from 'react-helmet';
 import { Row, Col } from 'react-flexbox-grid';
 import { Field } from 'redux-form';
 
-import Input, { Label } from '@components/Input';
+import Input from '@components/Input';
 import PageWrapper from '@components/PageWrapper';
 import Spacer from '@components/Spacer';
+import Person from '@components/Person';
 
 export default function InformationPage({ state, ...props }) {
   return (
     <PageWrapper
       element="form"
-      index={2}
+      index={3}
       barDisabled={props.invalid}
       onSubmit={props.handleSubmit}
       state={state}
     >
-      <Helmet title="Home" />
-
-      <h1>Tragen Sie Ihre Informationen ein.</h1>
-      <p>
-        In folgenden Formular können Sie uns optional - aber idealerweiße - nähere Informationen
-        über Ihr geplantes Projekt zukommen lassen.
-      </p>
-
-      <br />
+      <Helmet title="Ihre persönlichen Daten" />
 
       <Row>
-        <Col xl={6} lg={8} xs={12}>
+        <Col md={8} xs={12}>
+          <h1>Ihre persönlichen Daten</h1>
+          <p>
+            Wir würden Sie und Ihr Produkt gerne näher kennenlernen. Hierzu füllen Sie bitte das
+            Formular aus.
+          </p>
+        </Col>
+      </Row>
+
+      <Spacer size="xl" />
+
+      <Row>
+        <Col lg={8} xs={12}>
           <Row>
             <Col xl={6} xs={12}>
               <Field component={Input} autoFocus name="firstName" placeholder="Vorname" />
@@ -41,15 +46,22 @@ export default function InformationPage({ state, ...props }) {
           <Spacer />
           <Field component={Input} name="email" placeholder="E-Mail Adresse" />
           <Spacer />
-          <Field component={Input} name="phone" placeholder="Telefonnummer (mit Ländercode)" />
+          <Field component={Input} name="company" placeholder="Firma" />
           <Spacer />
-          <Label htmlFor="test">
-            <Field component={Input} name="nda_needed" type="checkbox" id="test" />
-            &nbsp;&nbsp;&nbsp;
-            <span>Es wird ein NDA gebraucht? Schreiben Sie uns eine E-Mail an&nbsp;<a href="mailto:contract@fintory.co">contract@fintory.co</a></span>
-          </Label>
+          <Row>
+            <Col xs={2}>
+              <Input disabled input={{ value: '+49' }} meta={{ touched: false }} />
+            </Col>
+
+            <Col xs={10}>
+              <Field component={Input} name="phone" placeholder="Telefonnummer" />
+            </Col>
+          </Row>
           <Spacer />
           <Field component={Input} element="textarea" name="description" placeholder="Projekt-Beschreibung" />
+        </Col>
+        <Col lg={4} xs={12}>
+          <Person />
         </Col>
       </Row>
     </PageWrapper>

@@ -1,5 +1,5 @@
 
 export default {
-  '/': '/information',
-  '/information': '/confirmation',
+  '/': '/unsere-projekt-phasen',
+  '/unsere-projekt-phasen': '/ihre-informationen',
 };

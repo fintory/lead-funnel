@@ -11,6 +11,8 @@ export const mobile = attrs => ({
   '@media (max-width: 813px)': attrs,
 });
 
+mobile.raw = '(max-width: 813px)';
+
 export const retina = attrs => ({
   '@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi)': attrs,
 });

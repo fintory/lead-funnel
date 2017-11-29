@@ -11,30 +11,21 @@ export default StyleSheet.create({
     justifyContent: 'center',
     overflow: 'hidden',
     outline: 'none',
-    border: '2px solid #D8D8D8',
-    borderRadius: 8,
     textAlign: 'center',
     position: 'relative',
     padding: 25,
     transition: 'all 150ms ease-in',
     userSelect: 'none',
-    boxShadow: 'none',
     cursor: 'pointer',
-    margin: '10px 0',
+    margin: '16px 0',
     '-webkit-tap-highlight-color': 'transparent',
-    // '-webkit-transform': 'translateZ(0)',
 
     ...mobile({
       padding: 15,
     }),
-
-    ':hover': {
-      boxShadow: '0 4px 10px rgba(0,0,0,.06)',
-    },
   },
 
   'choice--selected': {
-    borderColor: '#5395f5',
     color: 'white',
     boxShadow: '0 4px 10px rgba(0,0,0,.06)',
   },

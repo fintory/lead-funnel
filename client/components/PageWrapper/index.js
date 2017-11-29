@@ -8,7 +8,7 @@ import ActionBar from '@components/ActionBar';
 
 import styles from './style';
 
-export default function PageWrapper({ element: Element = 'div', barDisabled, ...props }) {
+export default function PageWrapper({ element: Element = 'div', hideActionBar, barDisabled, ...props }) {
   return (
     <Element
       onSubmit={props.handleSubmit}
@@ -26,10 +26,12 @@ export default function PageWrapper({ element: Element = 'div', barDisabled, ...
         {props.children}
       </Grid>
 
-      <ActionBar
-        index={props.index}
-        barDisabled={barDisabled}
-      />
+      {hideActionBar || (
+        <ActionBar
+          index={props.index}
+          barDisabled={barDisabled}
+        />
+      )}
     </Element>
   );
 }

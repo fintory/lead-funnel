@@ -30,6 +30,7 @@ const styles = extended.StyleSheet.create({
       color: 'inherit',
       appearance: 'none',
       '-webkit-font-smoothing': 'antialiased',
+      '-moz-osx-font-smoothing': 'grayscale',
     },
     '*body': {
       fontSize: 16,
@@ -38,6 +39,7 @@ const styles = extended.StyleSheet.create({
       color: '#3f3f48',
       margin: '0 auto',
       '-webkit-font-smoothing': 'antialiased',
+      '-moz-osx-font-smoothing': 'grayscale',
       fontWeight: 'normal',
       boxSizing: 'border-box',
       padding: '0 16px 80px',
@@ -54,14 +56,33 @@ const styles = extended.StyleSheet.create({
       fontSize: 36,
       color: '#3f3f48',
       margin: 0,
+      marginBottom: 10,
       fontWeight: 'inherit',
 
       '@media (max-width: 500px)': {
         fontSize: 24,
       },
     },
+    '*h4': {
+      fontSize: 32,
+      color: '#3f3f48',
+      margin: 0,
+      marginBottom: 10,
+      fontWeight: 'inherit',
+
+      '@media (max-width: 500px)': {
+        fontSize: 24,
+      },
+    },
+    '*h3': {
+      fontSize: 18,
+      color: '#3f3f48',
+      margin: 0,
+      fontWeight: 'inherit',
+    },
     '*p': {
       opacity: 0.7,
+      margin: 0,
     },
 
     '*a': {
@@ -77,8 +98,23 @@ const styles = extended.StyleSheet.create({
       fill: 'currentColor',
     },
 
+    '*hr': {
+      borderTop: '1px solid #eee',
+      borderBottom: 0,
+      height: 0,
+    },
+
     '*#root': {
       position: 'relative',
+    },
+
+    '*.row': {
+      margin: '0 -16px',
+    },
+
+    '*[class^="col"]': {
+      paddingLeft: 16,
+      paddingRight: 16,
     },
   },
 });

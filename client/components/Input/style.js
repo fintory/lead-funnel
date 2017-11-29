@@ -18,6 +18,7 @@ export default StyleSheet.create({
   },
 
   input__entity: {
+    color: 'rgba(63, 63, 72, 1)',
     background: 'white',
     borderRadius: 5,
     boxSizing: 'border-box',
@@ -39,10 +40,23 @@ export default StyleSheet.create({
       boxShadow: '0 6px 14px rgba(40, 44, 71, 0.1)',
     },
 
+    '::-webkit-contacts-auto-fill-button': {
+      visibility: 'hidden',
+      display: 'none',
+      pointerEvents: 'none',
+      position: 'absolute',
+      right: 0,
+    },
+
     ...mobile({
       fontSize: 14,
       padding: '10px 15px',
     }),
+  },
+
+  'input__entity--disabled': {
+    userSelect: 'none',
+    color: 'rgba(63, 63, 72, 1)',
   },
 
   'input__entity--checkbox': {

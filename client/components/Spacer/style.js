@@ -27,11 +27,45 @@ export default StyleSheet.create({
     }),
   },
 
-  'spacer--xs': {},
-  'spacer--sm': {},
-  'spacer--md': {},
-  'spacer--lg': {},
-  'spacer--xl': {},
+  'spacer--xs': {
+    height: 8,
+
+    ...mobile({
+      height: 6,
+    }),
+  },
+
+  'spacer--sm': {
+    height: 24,
+
+    ...mobile({
+      height: 20,
+    }),
+  },
+
+  'spacer--md': {
+    height: 32,
+
+    ...mobile({
+      height: 28,
+    }),
+  },
+
+  'spacer--lg': {
+    height: 40,
+
+    ...mobile({
+      height: 32,
+    }),
+  },
+
+  'spacer--xl': {
+    height: 48,
+
+    ...mobile({
+      height: 36,
+    }),
+  },
 
   ...generateHiddenFor('xs'),
   ...generateHiddenFor('sm'),

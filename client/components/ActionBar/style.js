@@ -18,7 +18,7 @@ export default StyleSheet.create({
 
     ...mobile({
       height: 72,
-      padding: '15px 30px',
+      padding: '15px 16px',
     }),
 
     '@media (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation: landscape)': {

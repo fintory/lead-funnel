@@ -6,7 +6,9 @@ export default {
     }, {}, yes),
   ),
 
-  '/information': fields => new Promise((yes) => {
+  '/unsere-projekt-phasen': () => new Promise(yes => yes()),
+
+  '/ihre-informationen': fields => new Promise((yes) => {
     analytics.identify({
       email: fields.email,
       phone: fields.phone,
@@ -15,6 +17,4 @@ export default {
       analytics.track('Submit new information', fields, {}, yes),
     );
   }),
-
-  '/confirmation': () => new Promise(yes => yes()),
 };

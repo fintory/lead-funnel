@@ -16,6 +16,7 @@ export default StyleSheet.create({
     animationName: [fadeIn],
     animationDelay: '1000ms',
     animationDuration: '1000ms',
+    animationFillMode: 'both',
   },
 
   'main--exiting': {
@@ -25,6 +26,7 @@ export default StyleSheet.create({
     right: 0,
     animationName: [fadeOut],
     animationDuration: '1000ms',
+    animationFillMode: 'both',
   },
 
   'main--exited': {
@@ -32,7 +34,7 @@ export default StyleSheet.create({
   },
 
   main__logo: {
-    marginBottom: 60,
+    marginBottom: 40,
 
     '@media (max-width: 500px)': {
       marginBottom: 30,

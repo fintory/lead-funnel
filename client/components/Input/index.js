@@ -14,6 +14,7 @@ export default function Input({ element: Element = 'input', type = 'text', input
           styles.input__entity,
           Element === 'textarea' && styles['input__entity--textarea'],
           type === 'checkbox' && styles['input__entity--checkbox'],
+          props.disabled && styles['input__entity--disabled'],
           publiclyInvalid && styles['input__entity--invalid'],
         )}
         {...props}

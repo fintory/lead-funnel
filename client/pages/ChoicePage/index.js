@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import PageWrapper from '@components/PageWrapper';
 import Tabs from '@components/Tabs';
+import Spacer from '@components/Spacer';
 
 class ChoicePage extends Component {
   constructor(props) {
@@ -22,14 +23,15 @@ class ChoicePage extends Component {
         index={1}
         state={this.props.state}
       >
-        <Helmet title="Bitte wählen Sie einen der folgenden Services" />
+        <Helmet title="Wählen Sie einen der folgenden Services" />
 
 
-        <h1>Bitte wählen Sie einen der folgenden Services</h1>
+        <h1>Wählen Sie einen Service oder Workshop</h1>
         <p>
-          In folgenden durchlaufen Sie, basierend auf dem ausgewählten Produkt, zwischen 2-5
-          Schritten, um ein Angebot für Ihr Projekt zu erhalten.
+          Im Folgenden sehen Sie eine Auflistung unserer verfügbaren Services und Workshops. Welcher passt am besten zu Ihnen?
         </p>
+
+        <Spacer size="xl" />
 
         <Tabs
           state={this.props.state}
@@ -44,4 +46,4 @@ class ChoicePage extends Component {
   }
 }
 
-export default formValues('serviceType', 'serviceTitle')(ChoicePage)
+export default formValues('serviceType', 'serviceTitle')(ChoicePage);

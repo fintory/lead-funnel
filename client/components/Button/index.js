@@ -12,7 +12,7 @@ import styles from './style.js';
 
 export default function Button(allProps) {
   let Tag = 'button';
-  const { loading, spinConfig, ...props } = allProps;
+  const { loading, spinConfig, styles: style, ...props } = allProps;
 
   if (has(props, 'to') && props.to) {
     Tag = Link;
@@ -32,7 +32,9 @@ export default function Button(allProps) {
       className={css(
         styles.main,
         loading && styles.main__loading,
-        props.disabled && styles['main--disabled']
+        props.disabled && styles['main--disabled'],
+        style === 'block' && styles['main--block'],
+        style === 'transparent' && styles['main--transparent'],
       )}
       {...props}
     >
